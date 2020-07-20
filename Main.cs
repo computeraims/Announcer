@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -31,11 +32,11 @@ namespace Announcer
             AnnouncerObject = new GameObject("Announcer");
             DontDestroyOnLoad(AnnouncerObject);
 
-            string path = Directory.GetCurrentDirectory();
+            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
-            ConfigHelper.EnsureConfig($"{path}\\Modules\\Announcer\\config.json");
+            ConfigHelper.EnsureConfig($"{path}{Path.DirectorySeparatorChar}config.json");
 
-            Config = ConfigHelper.ReadConfig($"{path}\\Modules\\Announcer\\config.json");
+            Config = ConfigHelper.ReadConfig($"{path}{Path.DirectorySeparatorChar}config.json");
 
             AnnouncerObject.AddComponent<AnnouncerManager>();
         }

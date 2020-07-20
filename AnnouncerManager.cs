@@ -9,7 +9,6 @@ namespace Announcer
     {
         public void Awake()
         {
-            Console.WriteLine("AWAKE");
             Console.WriteLine(Main.Config.interval);
             InvokeRepeating("SendRandomMessage", Main.Config.interval, Main.Config.interval);
         }
