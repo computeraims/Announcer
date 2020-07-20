@@ -63,8 +63,5 @@
     <Compile Include="Utils\ConfigHelper.cs" />
     <Compile Include="Utils\UnityThread.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="config.json" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
